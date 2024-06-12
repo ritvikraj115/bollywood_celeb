@@ -71,7 +71,7 @@ if uploaded_img is not None:
     temp_dir = tempfile.mkdtemp()
     path = os.path.join(temp_dir, uploaded_img.name)
     with open(path, "wb") as f:
-        f.write(uploaded_file.getvalue())
+        f.write(uploaded_img.getvalue())
 
     
     display_image = Image.open(uploaded_img)
