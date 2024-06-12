@@ -10,12 +10,14 @@ import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 from mtcnn import MTCNN
 from PIL import Image
+import lzma
 
 detector = MTCNN()
 
 model = VGGFace(model='resnet50', include_top=False, input_shape=(224, 224, 3), pooling='avg')
 
-feature_list = np.array(pickle.load(open('embedding.pkl.xz', 'rb')))
+with lzma.open('embedding.pkl.xz', 'rb') as f:
+    feature_list = pickle.load(f)
 feature_list=feature_list[:5000]
 filenames = pickle.load(open('filenames.pkl', 'rb'))
 st.title('Which bollywood celebrity are you?')
