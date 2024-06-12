@@ -1,4 +1,5 @@
 absl-py
+cv2
 altair
 astunparse
 attrs
