@@ -27,8 +27,10 @@ def save_uploaded_image(uploaded_img):
     try:
         with open(os.path.join('data.zip', uploaded_img.name), 'wb') as f:
             f.write(uploaded_img.getbuffer())
+            print('True')
         return True
     except:
+        print('False')
         return False
 
 
