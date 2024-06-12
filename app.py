@@ -69,7 +69,7 @@ uploaded_img = st.file_uploader('Choose an image')
 
 if uploaded_img is not None:
     temp_dir = tempfile.mkdtemp()
-    path = os.path.join(temp_dir, uploaded_file.name)
+    path = os.path.join(temp_dir, uploaded_img.name)
     with open(path, "wb") as f:
         f.write(uploaded_file.getvalue())
 
