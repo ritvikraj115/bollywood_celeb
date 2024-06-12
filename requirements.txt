@@ -40,7 +40,7 @@ mtcnn==0.1.0
 namex==0.0.7
 numpy==1.26.3
 oauthlib==3.2.2
-opencv-python
+opencv-python-headless
 opt-einsum==3.3.0
 packaging==23.2
 pandas==2.1.4
