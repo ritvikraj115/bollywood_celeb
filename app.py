@@ -11,6 +11,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from mtcnn import MTCNN
 from PIL import Image
 import lzma
+import tempfile
 
 detector = MTCNN()
 
@@ -67,11 +68,15 @@ def recommend(feature_list, feature):
 uploaded_img = st.file_uploader('Choose an image')
 
 if uploaded_img is not None:
+    temp_dir = tempfile.mkdtemp()
+        path = os.path.join(temp_dir, uploaded_file.name)
+        with open(path, "wb") as f:
+                f.write(uploaded_file.getvalue())
 
     
     display_image = Image.open(uploaded_img)
     st.image(display_image)
-    features = extract_features("https://bollywoodceleb-ritvik.streamlit.app/~/+/media/b2db614c6287bcbe6636cddea99664e023e4d43cc3aead36eff85f6b.jpg", model, detector)
+    features = extract_features(path, model, detector)
     index_pos = recommend(feature_list, features)
     predicted_actor = " ".join(filenames[index_pos].split('\\')[1].split('_'))
     col1, col2 = st.columns(2)
