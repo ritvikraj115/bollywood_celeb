@@ -1,5 +1,5 @@
 import os
-from opencv import cv2
+import opencv-python as cv2
 import streamlit as st
 from keras_vggface.utils import preprocess_input
 from keras_vggface.vggface import VGGFace
