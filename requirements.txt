@@ -1,5 +1,5 @@
 absl-py
-opencv-python
+opencv-python-headless
 altair
 astunparse
 attrs
