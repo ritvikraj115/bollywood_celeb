@@ -1,10 +1,9 @@
-os
+
 cv2
 streamlit
 keras_vggface.utils
 keras_vggface.vggface
 numpy
-pickle
 sklearn.metrics.pairwise
 mtcnn
 PIL
