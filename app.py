@@ -15,7 +15,7 @@ detector = MTCNN()
 
 model = VGGFace(model='resnet50', include_top=False, input_shape=(224, 224, 3), pooling='avg')
 
-feature_list = np.array(pickle.load(open('embedding.pkl', 'rb')))
+feature_list = np.array(pickle.load(open('embedding.pkl.xz', 'rb')))
 feature_list=feature_list[:5000]
 filenames = pickle.load(open('filenames.pkl', 'rb'))
 st.title('Which bollywood celebrity are you?')
