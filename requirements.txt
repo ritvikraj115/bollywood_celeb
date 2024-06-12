@@ -1,5 +1,5 @@
 absl-py
-cv2
+opencv
 altair
 astunparse
 attrs
