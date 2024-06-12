@@ -68,20 +68,20 @@ uploaded_img = st.file_uploader('Choose an image')
 
 if uploaded_img is not None:
 
-    if save_uploaded_image(uploaded_img):
-        display_image = Image.open(uploaded_img)
-        st.image(display_image)
-        features = extract_features(os.path.join('uploads', uploaded_img.name), model, detector)
-        index_pos = recommend(feature_list, features)
-        predicted_actor = " ".join(filenames[index_pos].split('\\')[1].split('_'))
-        col1, col2 = st.columns(2)
+    
+    display_image = Image.open(uploaded_img)
+    st.image(display_image)
+    features = extract_features(os.path.join('uploads', uploaded_img.name), model, detector)
+    index_pos = recommend(feature_list, features)
+    predicted_actor = " ".join(filenames[index_pos].split('\\')[1].split('_'))
+    col1, col2 = st.columns(2)
 
-        with col1:
-            st.header('Your uploaded image')
-            st.image(display_image, width=300)
-        with col2:
-            st.header("Seems Like " + predicted_actor)
-            st.image(filenames[index_pos], width=300)
+    with col1:
+        st.header('Your uploaded image')
+        st.image(display_image, width=300)
+    with col2:
+        st.header("Seems Like " + predicted_actor)
+        st.image(filenames[index_pos], width=300)
 # import urllib
 #
 # from flask import Flask, request, jsonify
