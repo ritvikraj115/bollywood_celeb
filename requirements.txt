@@ -30,7 +30,7 @@ jsonschema-specifications==2023.12.1
 keras==2.8.0
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
-keras-vggface==0.6
+
 libclang==16.0.6
 Markdown==3.5.1
 markdown-it-py==3.0.0
