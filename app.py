@@ -25,7 +25,7 @@ st.title('Which bollywood celebrity are you?')
 
 def save_uploaded_image(uploaded_img):
     try:
-        with open(os.path.join('uploads', uploaded_img.name), 'wb') as f:
+        with open(os.path.join('data.zip', uploaded_img.name), 'wb') as f:
             f.write(uploaded_img.getbuffer())
         return True
     except:
