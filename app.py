@@ -69,9 +69,9 @@ uploaded_img = st.file_uploader('Choose an image')
 
 if uploaded_img is not None:
     temp_dir = tempfile.mkdtemp()
-        path = os.path.join(temp_dir, uploaded_file.name)
-        with open(path, "wb") as f:
-                f.write(uploaded_file.getvalue())
+    path = os.path.join(temp_dir, uploaded_file.name)
+    with open(path, "wb") as f:
+        f.write(uploaded_file.getvalue())
 
     
     display_image = Image.open(uploaded_img)
