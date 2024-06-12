@@ -86,7 +86,7 @@ if uploaded_img is not None:
         st.image(display_image, width=300)
     with col2:
         st.header("Seems Like " + predicted_actor)
-        a=filenames[index_pos].split('\')
+        a=filenames[index_pos].split(r'\')
         b="/".join(a)                            
         st.image(b, width=300)
 # import urllib
